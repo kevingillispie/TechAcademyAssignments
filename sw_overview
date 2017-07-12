@@ -1,0 +1,570 @@
+# Small Basic
+
+1. Write a program that contains the following elements: -A background color, -A foreground color, -The TextWindow.Pause() operation, and -The WriteLine operation.
+
+TextWindow.BackgroundColor = "yellow"
+TextWindow.ForegroundColor = "blue"
+TextWindow.Pause()
+TextWindow.WriteLine("Hello, World!")
+
+
+
+2. Write a program that contains the following elements: -The TextWindow.Write operation, -The TextWindow.Read operation, and -The CursorTop property (note: a property is an attribute of an object).
+
+
+TextWindow.Write("How much wood would a woodchuck chuck if a woodchuck could chuck wood? ")
+wood = TextWindow.Read()
+TextWindow.WriteLine("I really don't think that " + wood + " is correct.")
+TextWindow.Pause()
+TextWindow.CursorTop = 10
+TextWindow.WriteLine("Consensus believes that a woodchuck would chuck enough to up chuck.")
+
+
+
+
+3. Write a program that includes the following: The TextWindow.Title property, -Assigning a value to a variable, -The TextWindow.WriteLine operation, and -The TextWindow.Top property.
+
+
+TextWindow.Title = "LOOK AT THIS TITLE OMG LOL!!"
+TextWindow.Write("The Flash episode where he was put in a musical was terrible: True or False?: ")
+answer = TextWindow.Read()
+TextWindow.WriteLine("")
+TextWindow.WriteLine("The correct answer is not " + answer + ". The correct answer is 'THAT EPISODE BLEW CHUNKS'.")
+TextWindow.Top = 500
+
+
+
+4. Write and execute your own conditional statement.
+
+TextWindow.Title = “Empire Recruiting Offer”
+
+TextWindow.WriteLine("Pick a number between 1 and 10: ")
+
+number = TextWindow.Read()
+
+random = Math.GetRandomNumber(10)
+
+TextWindow.WriteLine(random)
+
+
+
+
+
+If (number < random) Then
+
+  TextWindow.WriteLine("Too low. Better luck next time!")
+
+EndIf
+
+
+
+If (number > random) Then
+
+  TextWindow.WriteLine("Too high. Better luck next time!")
+
+EndIf
+
+
+
+If (number = random) Then
+
+  TextWindow.WriteLine("HOLY SHNIKIES!! YOU NAILED IT!!")
+
+EndIf
+
+
+5. Write a program that includes the following: -If statement, -ElseIf statement, -Else statement, -Program.delay, -Math.Remainder, and -Math.Ceiling(number).
+
+TextWindow.WriteLine("I am here to make you an offer.")
+
+Program.Delay(2000)
+
+TextWindow.WriteLine("Are you ready to find out what it is?")
+
+Program.Delay(2000)
+
+TextWindow.WriteLine("Of course you are. Let's begin...")
+
+Program.Delay(2000)
+
+
+
+TextWindow.WriteLine("Please enter your age: ")
+
+age = TextWindow.ReadNumber()
+
+
+
+Program.Delay(1000)
+
+
+
+TextWindow.WriteLine("Do you like milk and cookies? Type 'y' for 'yes' and 'n' for 'no': ")
+
+cookie = TextWindow.Read()
+
+Program.Delay(1000)
+
+If (cookie = "n") Then
+
+  TextWindow.WriteLine("No?")
+
+  Program.Delay(2000)
+
+  TextWindow.WriteLine("You have much hatred in you.")
+
+  Program.Delay(2000)
+
+  TextWindow.WriteLine("There's someone we'd like you to meet.")
+
+  Program.Delay(2000)
+
+  TextWindow.WriteLine("The Empire thinks you'll like him.")
+
+  Program.Delay(1000)
+
+  TextWindow.WriteLine("But whatever you do, don't say anything about his labored breathing.")
+
+
+
+Else
+
+
+
+  TextWindow.WriteLine("What is your favorite cookie? ")
+
+  cookieKind = TextWindow.Read()
+
+  Program.Delay(3000)
+
+  TextWindow.WriteLine("Calculating...")
+
+  Program.Delay(5000)
+
+  TextWindow.Write("How many " + cookieKind + "'s will it take to convince you to mow the lawn? (No decimals): ")
+
+  cookieNumber = TextWindow.ReadNumber()
+
+  Program.Delay(3000)
+
+  cookieRound = Math.Ceiling(cookieNumber)
+
+  If (cookieNumber < cookieRound) Then
+
+	TextWindow.WriteLine("I SAID NO DECIMALS, Rebel scum!")
+
+	Program.Delay(3000)
+
+	TextWindow.WriteLine("Lord Vader will not be pleased.")
+
+  ElseIf (cookieNumber = cookieRound) then
+
+
+
+	TextWindow.WriteLine("Look, come on over to the dark side... ")
+
+	Program.Delay(2000)
+
+	TextWindow.WriteLine("... I think we can work something out.")
+
+	Program.Delay(2000)
+
+	TextWindow.WriteLine("I bet Lord Vader would be willing to give you " + Math.Remainder(age, 10) + " " + cookieKind + "s just for stopping by.")
+
+  EndIf
+
+EndIf
+
+
+
+
+
+6. Write a program that includes the following: -A For Loop, and -A While Loop.
+
+TextWindow.Title = "Type the numbers"
+
+
+
+TextWindow.WriteLine("Type the numbers you see.")
+
+
+
+rando = Math.GetRandomNumber(1000)
+
+TextWindow.WriteLine(rando)
+
+num = TextWindow.ReadNumber()
+
+
+
+correct:
+
+If (num = rando) Then
+
+  For a = num To 0 Step -1
+
+	TextWindow.WriteLine(a)
+
+
+
+  EndFor
+
+  TextWindow.WriteLine("SPLAT!")
+
+Else
+
+  While (num < rando)
+
+	TextWindow.WriteLine("HA HA!!")
+
+	Program.Delay(1000)
+
+	TextWindow.WriteLine("Try again.")
+
+	Program.Delay(1000)
+
+	TextWindow.WriteLine("Ready...")
+
+	Program.Delay(500)
+
+	TextWindow.WriteLine("...set...")
+
+	Program.Delay(500)
+
+	TextWindow.WriteLine("...on your mark...")
+
+	Program.Delay(1000)
+
+	TextWindow.WriteLine("...lol jk...")
+
+	Program.Delay(1500)
+
+	TextWindow.WriteLine("GO!!")
+
+	TextWindow.WriteLine(rando)
+
+	num = TextWindow.ReadNumber()
+
+	If (num = rando) Then
+
+	  Goto correct
+
+	EndIf
+
+  EndWhile
+
+EndIf
+
+
+7. Write and execute the following code: Draw an X shape using GraphicsWindow.DrawLine.
+
+GraphicsWindow.Height = 210
+
+GraphicsWindow.Width = 210
+
+GraphicsWindow.BackgroundColor = "silver"
+
+
+
+GraphicsWindow.DrawLine(10,10,200,200)
+
+GraphicsWindow.DrawLine(10,200,200,10)
+
+
+
+GraphicsWindow.Show()
+
+
+8. Write a program that includes the following: -GraphicsWindow.Height, -GraphicsWindow.Width, -GraphicsWindow.DrawLine, -GraphicsWindow.PenWidth, -GraphicsWindow.PenColor, -GraphicsWindow.SetPixel, -GraphicsWindow.DrawBoundText with multiple font sizes, and -GraphicsWindow.FontItalic.
+
+GraphicsWindow.Height = 300
+
+GraphicsWindow.Width = 1000
+
+GraphicsWindow.BackgroundColor = "pink"
+
+
+
+GraphicsWindow.PenColor = "red"
+
+GraphicsWindow.PenWidth = 200
+
+GraphicsWindow.DrawLine(250,100,750,150)
+
+
+
+GraphicsWindow.SetPixel(739, 251, "black")
+
+
+
+GraphicsWindow.DrawBoundText(743,243,150,"(It's really small.)")
+
+GraphicsWindow.FontItalic = "true"
+
+GraphicsWindow.FontSize = 100
+
+GraphicsWindow.DrawBoundText(10,100,1000,"Check out this dot!”)
+
+9. Write a program that includes the following: -GraphicsWindow.BrushColor, -GraphicsWindow.DrawEllipse, -GraphicsWindow.FillEllipse, -GraphicsWindow.FillTriangle, -GraphicsWindow.FillRectangle, -Shapes.AddTriangle, and -Shapes.Animate.
+
+GraphicsWindow.BrushColor = "pink"
+
+GraphicsWindow.FillEllipse(10,10,100,100)
+
+GraphicsWindow.DrawEllipse(10,10,100,100)
+
+
+
+Program.Delay(1000)
+
+GraphicsWindow.BrushColor = "black"
+
+circle2 = Shapes.AddEllipse(10,10)
+
+Shapes.Animate(circle2,100,100,500)
+
+
+
+Program.Delay(1000)
+
+GraphicsWindow.BrushColor = "red"
+
+triangle1 = Shapes.AddTriangle(60,20,40,45,80,45)
+
+GraphicsWindow.FillTriangle(60,20,40,45,80,45)
+
+Shapes.Animate(triangle1,60,105,1000)
+
+
+
+Program.Delay(250)
+
+GraphicsWindow.BrushColor = "yellow"
+
+GraphicsWindow.FillRectangle(35,50,50,100)
+
+
+
+
+10. Write your own program that includes a subroutine, and comment your code.
+
+TextWindow.WriteLine("Tell me what you want.") 'First request
+
+Program.Delay(2000) 'Dramatic pause
+
+TextWindow.WriteLine("What you really, really want: ") 'Second request
+
+desire = TextWindow.Read() 'Set user input to variable "desire"
+
+singChorus() 'Call subroutine
+
+Sub singChorus 'Start subroutine
+
+  a = 5 'Set repeat variable
+
+  While (a > 1) 'Begin while loop
+
+	TextWindow.WriteLine("You wanna " + desire +"!!") 'Print text plus user input
+
+	Program.Delay(500) 'Musical pause
+
+	a = a - 1 'Decrement repeat variable
+
+  EndWhile 'End subroutine
+
+ EndSub 'End it all!
+
+
+11. Using what you learned so far, have the turtle make a square using a For Loop. Additionally, have a background color, a pen color and try to make the square as centered as you can.
+
+GraphicsWindow.Height = 500
+
+GraphicsWindow.Width = 500
+
+GraphicsWindow.BackgroundColor = "black"
+
+GraphicsWindow.PenColor = "green"
+
+
+
+Turtle.X = 30
+
+Turtle.Y = 470
+
+For x = 1 to 4
+
+  Turtle.Move(440)
+
+  Turtle.Turn(90)
+
+EndFor
+
+
+
+12. Write a program that includes the following: -Turtle.Show, -Turtle.Move, -Turtle.TurnRight, -Turtle.Angle, -Turtle.TurnLeft, and -Turtle.MoveTo.
+
+Turtle.Show()
+
+Turtle.Move(200)
+
+Turtle.TurnRight()
+
+Turtle.Move(40)
+
+Turtle.TurnRight()
+
+Turtle.Move(70)
+
+Turtle.Turn(-135)
+
+Turtle.Move(90)
+
+Turtle.Turn(135)
+
+Turtle.Move(50)
+
+Turtle.Turn(45)
+
+Turtle.Move(90)
+
+Turtle.TurnLeft()
+
+Turtle.Move(110)
+
+Turtle.Turn(135)
+
+Turtle.Move(50)
+
+Turtle.Turn(45)
+
+Turtle.Move(50)
+
+Turtle.Turn(-135)
+
+Turtle.Move(40)
+
+Turtle.TurnRight()
+
+Turtle.Move(37)
+
+Turtle.MoveTo(200,20)
+
+
+13. Create a subroutine that includes variables.
+
+TextWindow.WriteLine("They say that every time a bell rings, an angel gets his wings.")
+
+Program.Delay(2000)
+
+TextWindow.WriteLine("How many angels do you want to promote?: ")
+
+num = TextWindow.ReadNumber()
+
+
+
+newAngel()
+
+Sub newAngel
+
+  While (num > 0)
+
+	Sound.PlayBellRing()
+
+	Program.Delay(3000)
+
+	num = num - 1
+
+  EndWhile
+
+EndSub
+
+
+
+14. Create your own one-dimensional array.
+
+TextWindow.Write("How many countries have you visited: ")
+numCountries = TextWindow.ReadNumber()
+num = numCountries
+
+
+While (numCountries > 0)
+  TextWindow.Write("You have " + numCountries + " left to write. Please write the name and press enter: ")
+  name[numCountries] = TextWindow.Read()
+  numCountries = numCountries - 1
+EndWhile
+TextWindow.WriteLine("Here is the list: ")
+Program.Delay(500)
+While (num > 0)
+  TextWindow.WriteLine(name[num])
+  num = num - 1
+EndWhile
+
+
+
+15. Create your own two-dimensional array.
+
+TextWindow.WriteLine("What is your favoite food: ")
+pairings["You"]["Food"] = TextWindow.Read()
+
+TextWindow.WriteLine("What is your friend's favorite food: ")
+pairings["You"]["Drink"] = TextWindow.Read()
+
+TextWindow.WriteLine("What is your favorite drink: ")
+pairings["Them"]["Food"] = TextWindow.Read()
+
+TextWindow.WriteLine("What is your friends favorite drink: ")
+pairings["Them"]["Drink"] = TextWindow.Read()
+
+Program.Delay(2000)
+TextWindow.WriteLine("Here's what you wrote: ")
+TextWindow.WriteLine(pairings)
+
+
+16. Create a program that includes the following events: -MouseUp, -MouseDown, -MouseMove, -KeyDown, and -KeyUp.
+
+GraphicsWindow.Title = “Irritating Drawing Program”
+GraphicsWindow.BackgroundColor = GraphicsWindow.GetRandomColor()
+
+GraphicsWindow.ShowMessage("Right click for kttens. Press any key for pen-width change.", "WARNING")
+
+GraphicsWindow.MouseDown = down
+GraphicsWindow.MouseUp = up
+GraphicsWindow.MouseMove = draw
+
+GraphicsWindow.PenWidth = 10
+
+x = GraphicsWindow.MouseX
+y = GraphicsWindow.MouseY
+
+Sub down
+  If (Mouse.IsRightButtonDown) Then
+	GraphicsWindow.DrawImage(Flickr.GetRandomPicture("kitten"), 10,0)
+  EndIf
+EndSub
+
+Sub draw
+  e = GraphicsWindow.MouseX
+  f = GraphicsWindow.MouseY
+  If (Mouse.IsLeftButtonDown) Then
+	GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+	GraphicsWindow.DrawLine(x,y,e,f)
+  EndIf
+  x = e
+  y = f
+EndSub
+
+Sub up
+  GraphicsWindow.BackgroundColor = GraphicsWindow.GetRandomColor()
+EndSub
+
+GraphicsWindow.KeyDown = Keydown
+GraphicsWindow.KeyUp = Keyup
+
+Sub Keydown
+  GraphicsWindow.PenWidth = Math.GetRandomNumber(100)
+EndSub
+
+Sub Keyup
+  GraphicsWindow.Height = Math.GetRandomNumber(1000)
+  GraphicsWindow.Width = Math.GetRandomNumber(1000)
+EndSub
