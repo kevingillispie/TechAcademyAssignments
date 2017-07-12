@@ -180,14 +180,11 @@ GraphicsWindow.Height = 300
 GraphicsWindow.Width = 1000
 GraphicsWindow.BackgroundColor = "pink"
 
-
 GraphicsWindow.PenColor = "red"
 GraphicsWindow.PenWidth = 200
 GraphicsWindow.DrawLine(250,100,750,150)
 
-
 GraphicsWindow.SetPixel(739, 251, "black")
-
 
 GraphicsWindow.DrawBoundText(743,243,150,"(It's really small.)")
 GraphicsWindow.FontItalic = "true"
@@ -235,9 +232,9 @@ singChorus() 'Call subroutine
 Sub singChorus 'Start subroutine
   a = 5 'Set repeat variable
   While (a > 1) 'Begin while loop
-	TextWindow.WriteLine("You wanna " + desire +"!!") 'Print text plus user input
-	Program.Delay(500) 'Musical pause
-	a = a - 1 'Decrement repeat variable
+	 TextWindow.WriteLine("You wanna " + desire +"!!") 'Print text plus user input
+	 Program.Delay(500) 'Musical pause
+	 a = a - 1 'Decrement repeat variable
   EndWhile 'End subroutine
  EndSub 'End it all!
 
@@ -289,11 +286,11 @@ Turtle.MoveTo(200,20)
 
 13. Create a subroutine that includes variables.
 
+
 TextWindow.WriteLine("They say that every time a bell rings, an angel gets his wings.")
 Program.Delay(2000)
 TextWindow.WriteLine("How many angels do you want to promote?: ")
 num = TextWindow.ReadNumber()
-
 
 newAngel()
 
@@ -308,6 +305,7 @@ EndSub
 
 
 14. Create your own one-dimensional array.
+
 
 TextWindow.Write("How many countries have you visited: ")
 numCountries = TextWindow.ReadNumber()
@@ -330,6 +328,7 @@ EndWhile
 
 15. Create your own two-dimensional array.
 
+
 TextWindow.WriteLine("What is your favoite food: ")
 pairings["You"]["Food"] = TextWindow.Read()
 
@@ -347,7 +346,9 @@ TextWindow.WriteLine("Here's what you wrote: ")
 TextWindow.WriteLine(pairings)
 
 
+
 16. Create a program that includes the following events: -MouseUp, -MouseDown, -MouseMove, -KeyDown, and -KeyUp.
+
 
 GraphicsWindow.Title = “Irritating Drawing Program”
 GraphicsWindow.BackgroundColor = GraphicsWindow.GetRandomColor()
@@ -365,7 +366,7 @@ y = GraphicsWindow.MouseY
 
 Sub down
   If (Mouse.IsRightButtonDown) Then
-	GraphicsWindow.DrawImage(Flickr.GetRandomPicture("kitten"), 10,0)
+	 GraphicsWindow.DrawImage(Flickr.GetRandomPicture("kitten"), 10,0)
   EndIf
 EndSub
 
@@ -373,8 +374,8 @@ Sub draw
   e = GraphicsWindow.MouseX
   f = GraphicsWindow.MouseY
   If (Mouse.IsLeftButtonDown) Then
-	GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
-	GraphicsWindow.DrawLine(x,y,e,f)
+  	GraphicsWindow.PenColor = GraphicsWindow.GetRandomColor()
+  	GraphicsWindow.DrawLine(x,y,e,f)
   EndIf
   x = e
   y = f
@@ -396,8 +397,9 @@ Sub Keyup
   GraphicsWindow.Width = Math.GetRandomNumber(1000)
 EndSub
 
+==================================================================
 
-17. Small Basic Exercise 1
+17. Small Basic Exercise #1
 
 ' NOTE: this code is written in Small Basic
 
@@ -422,7 +424,7 @@ Else
 EndIf
 
 
-18. Small Basic Exercise 2
+18. Small Basic Exercise #2
 
 ' NOTE: This program was written in Small Basic
 
@@ -507,17 +509,293 @@ ElseIf (location = "y") Then
   Program.Delay(500)
   TextWindow.WriteLine("The current time in London is " + ukHourY + ":" + Clock.Minute + ". ")
   If (nycHourY > 21) Then
-	TextWindow.WriteLine("The New York office is now closed. ")
-  ElseIf (nycHourY + 3 < 9) then
-	TextWindow.WriteLine("The New York office is now closed. ")
-  Else
-	TextWindow.WriteLine("The New York office is now open. ")
+  	TextWindow.WriteLine("The New York office is now closed. ")
+    ElseIf (nycHourY + 3 < 9) then
+  	 TextWindow.WriteLine("The New York office is now closed. ")
+    Else
+  	 TextWindow.WriteLine("The New York office is now open. ")
   EndIf
   If (ukHourY > 21) Then
-  TextWindow.WriteLine("The London office is now closed. ")
-  ElseIf (ukHourY < 9) then
-	TextWindow.WriteLine("The London office is now closed. ")
-  Else
-	TextWindow.WriteLine("The London office is now open. ")
+    TextWindow.WriteLine("The London office is now closed. ")
+    ElseIf (ukHourY < 9) then
+  	 TextWindow.WriteLine("The London office is now closed. ")
+    Else
+  	 TextWindow.WriteLine("The London office is now open. ")
   EndIf
 EndIf
+
+
+19. Small Basic Exercise #3
+
+
+TextWindow.Write("Please enter the path to the file to be copied (omit quotation marks): ")
+origin = TextWindow.Read()
+TextWindow.Write("Please enter the path to the destination folder (omit quotation marks): ")
+destination = TextWindow.Read()
+
+File.CopyFile(origin, destination)
+
+
+
+20. Small Basic Exercise #4
+
+
+' NOTE: This program was written in Small Basic
+
+Sub nycHourN
+  If (hour > 20) Then
+    nycHourN = hour - 21
+  ElseIf (hour < 21) then
+    nycHourN = hour + 3
+  EndIf
+EndSub
+
+
+Sub ukHourN
+  If (hour > 15) Then
+    ukHourN = hour - 16
+  ElseIf (hour < 16) then
+    ukHourN = hour + 8
+  EndIf
+EndSub
+
+
+Sub ukHourY
+  If (Clock.Hour > 15) Then
+    ukHourY = Clock.Hour - 16
+  ElseIf (Clock.Hour < 16) then
+    ukHourY = Clock.Hour + 8
+  EndIf
+EndSub
+ukHourY()
+
+Sub nycHourY
+  If (Clock.Hour > 20) Then
+    nycHourY = Clock.Hour - 21
+  ElseIf (Clock.Hour < 21) then
+    nycHourY = Clock.Hour + 3
+  EndIf
+EndSub
+nycHourY()
+
+TextWindow.WriteLine("This program will determine whether or not the NYC and London branches are open.")
+Program.Delay(2000)
+reenter:
+TextWindow.Write("Firstly, are you currently in Portland, OR? Type 'y' for YES and 'n' for NO: ")
+location = TextWindow.Read()
+
+If (location <> "y" Or "n") Then
+  TextWindow.WriteLine("Please enter either 'y' or 'n'.")
+  Goto reenter
+EndIf
+
+If (location = "n") Then
+
+  start1:
+  TextWindow.WriteLine("Please enter the local time in Portland, OR. What is the hour (24-hour time): ")
+  hour = TextWindow.ReadNumber()
+  If (hour > 23) Then
+    TextWindow.WriteLine("Please enter a number that is less than 24.")
+    Program.Delay(1000)
+    Goto start1
+  EndIf
+
+  Program.Delay(500)
+  nycHourN()
+  ukHourN()
+  TextWindow.WriteLine("The current time in NYC is " + nycHourN + ":" + Clock.Minute + ". ")
+  TextWindow.WriteLine("The current time in London is " + ukHourN + ":" + Clock.Minute + ". ")
+
+  If (nycHourN > 20) Then
+    TextWindow.WriteLine("The New York office is now closed. ")
+  ElseIf (nycHourN < 9) then
+    TextWindow.WriteLine("The New York office is now closed. ")
+  Else
+    TextWindow.WriteLine("The New York office is now open. ")
+  EndIf
+  If (ukHourN > 20 Or ukHourN < 9) Then
+    TextWindow.WriteLine("The London office is now closed. ")
+    Program.Delay(500)
+    TextWindow.WriteLine("You may transfer files.")
+    Program.Delay(500)
+    TextWindow.Write("Please enter the path to the file to be copied (omit quotation marks): ")
+    origin = TextWindow.Read()
+    TextWindow.Write("Please enter the path to the destination folder (omit quotation marks): ")
+    destination = TextWindow.Read()
+
+    File.CopyFile(origin, destination)
+
+  Else
+    TextWindow.WriteLine("The London office is now open. You can not copy files at this time.")
+  EndIf
+
+
+ElseIf (location = "y") Then
+  TextWindow.WriteLine("The current time in Portland is " + Clock.Hour + ":" + Clock.Minute)
+  TextWindow.WriteLine("The current time in NYC is " + nycHourY + ":" + Clock.Minute + ". ")
+  Program.Delay(500)
+  TextWindow.WriteLine("The current time in London is " + ukHourY + ":" + Clock.Minute + ". ")
+  If (nycHourY > 21) Then
+    TextWindow.WriteLine("The New York office is now closed. ")
+  ElseIf (nycHourY + 3 < 9) Then
+    TextWindow.WriteLine("The New York office is now closed. ")
+  Else
+    TextWindow.WriteLine("The New York office is now open. ")
+  EndIf
+
+
+If (ukHourY > 20 Or ukHourY < 9) Then
+  TextWindow.WriteLine("The London office is now closed. ")
+  Program.Delay(500)
+  TextWindow.WriteLine("You may transfer files.")
+  Program.Delay(500)
+  TextWindow.Write("Please enter the path to the file to be copied (omit quotation marks): ")
+  origin = TextWindow.Read()
+  TextWindow.Write("Please enter the path to the destination folder (omit quotation marks): ")
+  destination = TextWindow.Read()
+
+  File.CopyFile(origin, destination)
+  Else
+    TextWindow.WriteLine("The London office is now open. You can not copy files at this time.")
+  EndIf
+EndIf
+
+
+
+21. Small Basic Exercise #5
+
+
+GraphicsWindow.Title = "Click button to execute file copy."
+
+GraphicsWindow.BackgroundColor = "silver"
+GraphicsWindow.Height = 300
+GraphicsWindow.Width = 400
+
+text = Shapes.AddText("Click to copy a file.")
+Shapes.Move(text, 145, 90)
+Controls.AddButton("COPY", 180, 130)
+Controls.ButtonClicked = onButtonClicked
+
+
+Sub nycHourN
+  If (hour > 21) Then
+    nycHourN = hour - 21
+  ElseIf (hour < 21) then
+    nycHourN = hour + 3
+  EndIf
+EndSub
+
+
+Sub ukHourN
+  If (hour > 15) Then
+    ukHourN = hour - 16
+  ElseIf (hour < 15) then
+    ukHourN = hour + 8
+  EndIf
+EndSub
+
+
+Sub ukHourY
+  If (Clock.Hour > 15) Then
+    ukHourY = Clock.Hour - 16
+  ElseIf (Clock.Hour < 15) then
+    ukHourY = Clock.Hour + 8
+  EndIf
+EndSub
+ukHourY()
+
+Sub nycHourY
+  If (Clock.Hour > 21) Then
+    nycHourY = Clock.Hour - 21
+  ElseIf (Clock.Hour < 21) then
+    nycHourY = Clock.Hour + 3
+  EndIf
+EndSub
+nycHourY()
+
+
+Sub onButtonClicked
+  TextWindow.WriteLine("This program will determine whether or not the NYC and London branches are open.")
+  Program.Delay(2000)
+  reenter:
+TextWindow.Write("Firstly, are you currently in Portland, OR? Type 'y' for YES and 'n' for NO: ")
+location = TextWindow.Read()
+
+If (location <> "y" Or "n") Then
+  TextWindow.WriteLine("Please enter either 'y' or 'n'.")
+  Goto reenter
+EndIf
+
+
+If (location = "n") Then
+
+  start1:
+  TextWindow.WriteLine("Please enter the local time in Portland, OR. What is the hour (24-hour time): ")
+  hour = TextWindow.ReadNumber()
+  If (hour > 23) Then
+    TextWindow.WriteLine("Please enter a number that is less than 24.")
+    Program.Delay(1000)
+    Goto start1
+  EndIf
+
+  Program.Delay(500)
+  nycHourN()
+  ukHourN()
+  TextWindow.WriteLine("The current time in NYC is " + nycHourN + ":" + Clock.Minute + ". ")
+  TextWindow.WriteLine("The current time in London is " + ukHourN + ":" + Clock.Minute + ". ")
+
+  If (nycHourN > 20) Then
+    TextWindow.WriteLine("The New York office is now closed. ")
+  ElseIf (nycHourN < 9) then
+    TextWindow.WriteLine("The New York office is now closed. ")
+  Else
+    TextWindow.WriteLine("The New York office is now open. ")
+  EndIf
+  If (ukHourN > 20 Or ukHourN < 9) Then
+    TextWindow.WriteLine("The London office is now closed. ")
+    Program.Delay(500)
+    TextWindow.WriteLine("You may transfer files.")
+    Program.Delay(500)
+    TextWindow.Write("Please enter the path to the file to be copied (omit quotation marks): ")
+    origin = TextWindow.Read()
+    TextWindow.Write("Please enter the path to the destination folder (omit quotation marks): ")
+    destination = TextWindow.Read()
+
+    File.CopyFile(origin, destination)
+  Else
+    TextWindow.WriteLine("The London office is now open. You can not copy files at this time.")
+  EndIf
+
+
+ElseIf (location = "y") Then
+  TextWindow.WriteLine("The current time in Portland is " + Clock.Hour + ":" + Clock.Minute)
+  TextWindow.WriteLine("The current time in NYC is " + nycHourY + ":" + Clock.Minute + ". ")
+  Program.Delay(500)
+  TextWindow.WriteLine("The current time in London is " + ukHourY + ":" + Clock.Minute + ". ")
+  If (nycHourY > 21) Then
+    TextWindow.WriteLine("The New York office is now closed. ")
+  ElseIf (nycHourY + 3 < 9) Then
+    TextWindow.WriteLine("The New York office is now closed. ")
+  Else
+    TextWindow.WriteLine("The New York office is now open. ")
+  EndIf
+
+
+If (ukHourY > 20 Or ukHourY < 9) Then
+  TextWindow.WriteLine("The London office is now closed. ")
+  Program.Delay(500)
+  TextWindow.WriteLine("You may transfer files.")
+  Program.Delay(500)
+  TextWindow.Write("Please enter the path to the file to be copied (omit quotation marks): ")
+  origin = TextWindow.Read()
+  TextWindow.Write("Please enter the path to the destination folder (omit quotation marks): ")
+  destination = TextWindow.Read()
+
+  File.CopyFile(origin, destination)
+  Else
+    TextWindow.WriteLine("The London office is now open. You can not copy files at this time.")
+  EndIf
+EndIf
+TextWindow.Write("Thank you!")
+
+EndSub
