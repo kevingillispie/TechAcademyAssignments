@@ -797,5 +797,6 @@ If (ukHourY > 20 Or ukHourY < 9) Then
   EndIf
 EndIf
 TextWindow.Write("Thank you!")
-
+Program.Delay(2000)
+Program.End()
 EndSub
