@@ -568,3 +568,128 @@ Sub Keyup
   GraphicsWindow.Height = Math.GetRandomNumber(1000)
   GraphicsWindow.Width = Math.GetRandomNumber(1000)
 EndSub
+
+
+17. Small Basic Exercise 1
+
+' NOTE: this code is written in Small Basic
+
+TextWindow.Title = "What number is smaller?"
+TextWindow.WriteLine("Please enter the first of two numbers: ")
+firstNum = TextWindow.ReadNumber()
+
+Program.Delay(1000)
+TextWindow.WriteLine("Please enter the second of two numbers: ")
+secondNum = TextWindow.ReadNumber()
+
+Program.Delay(1000)
+
+If (firstNum < secondNum) Then
+  TextWindow.WriteLine(firstNum + " is smaller than " + secondNum + ".")
+  Program.Delay(1000)
+ElseIf (firstNum > secondNum) then
+  TextWindow.WriteLine(secondNum + " is smaller than " + firstNum + ".")
+  Program.Delay(1000)
+Else
+  TextWindow.WriteLine("The numbers are equal.")
+EndIf
+
+
+18. Small Basic Exercise 2
+
+' NOTE: This program was written in Small Basic
+
+Sub nycHourN
+  If (hour > 21) Then
+	nycHourN = hour - 21
+  ElseIf (hour < 21) then
+	nycHourN = hour + 3
+  EndIf
+EndSub
+
+
+Sub ukHourN
+  If (hour > 15) Then
+	ukHourN = hour - 16
+  ElseIf (hour < 15) then
+	ukHourN = hour + 8
+  EndIf
+EndSub
+
+
+Sub ukHourY
+  If (Clock.Hour > 15) Then
+	ukHourY = Clock.Hour - 16
+  ElseIf (Clock.Hour < 15) then
+	ukHourY = Clock.Hour + 8
+  EndIf
+EndSub
+ukHourY()
+
+Sub nycHourY
+  If (Clock.Hour > 21) Then
+	nycHourY = Clock.Hour - 21
+  ElseIf (Clock.Hour < 21) then
+	nycHourY = Clock.Hour + 3
+  EndIf
+EndSub
+nycHourY()
+
+TextWindow.WriteLine("This program will determine whether or not the NYC and London branches are open.")
+Program.Delay(2000)
+TextWindow.Write("Firstly, are you currently in Portland, OR? Type 'y' for YES and 'n' for NO: ")
+location = TextWindow.Read()
+
+If (location = "n") Then
+
+  start1:
+  TextWindow.WriteLine("Please enter the local time in Portland, OR. What is the hour (24-hour time): ")
+  hour = TextWindow.ReadNumber()
+  If (hour > 23) Then
+	TextWindow.WriteLine("Please enter a number that is less than 24.")
+	Program.Delay(1000)
+	Goto start1
+  EndIf
+
+  Program.Delay(500)
+  nycHourN()
+  ukHourN()
+  TextWindow.WriteLine("The current time in NYC is " + nycHourN + ":" + Clock.Minute + ". ")
+  TextWindow.WriteLine("The current time in London is " + ukHourN + ":" + Clock.Minute + ". ")
+
+  If (nycHourN > 21) Then
+	TextWindow.WriteLine("The New York office is now closed. ")
+  ElseIf (nycHourN < 9) then
+	TextWindow.WriteLine("The New York office is now closed. ")
+  Else
+	TextWindow.WriteLine("The New York office is now open. ")
+  EndIf
+  If (ukHourN > 21) Then
+  TextWindow.WriteLine("The London office is now closed. ")
+  ElseIf (ukHourN < 9) then
+	TextWindow.WriteLine("The London office is now closed. ")
+  Else
+	TextWindow.WriteLine("The London office is now open. ")
+  EndIf
+
+
+ElseIf (location = "y") Then
+  TextWindow.WriteLine("The current time in Portland is " + Clock.Hour + ":" + Clock.Minute)
+  TextWindow.WriteLine("The current time in NYC is " + nycHourY + ":" + Clock.Minute + ". ")
+  Program.Delay(500)
+  TextWindow.WriteLine("The current time in London is " + ukHourY + ":" + Clock.Minute + ". ")
+  If (nycHourY > 21) Then
+	TextWindow.WriteLine("The New York office is now closed. ")
+  ElseIf (nycHourY + 3 < 9) then
+	TextWindow.WriteLine("The New York office is now closed. ")
+  Else
+	TextWindow.WriteLine("The New York office is now open. ")
+  EndIf
+  If (ukHourY > 21) Then
+  TextWindow.WriteLine("The London office is now closed. ")
+  ElseIf (ukHourY < 9) then
+	TextWindow.WriteLine("The London office is now closed. ")
+  Else
+	TextWindow.WriteLine("The London office is now open. ")
+  EndIf
+EndIf
