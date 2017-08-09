@@ -312,11 +312,3 @@ INSERT INTO Book_Loans
 	(8, 1, 8, GETDATE(), '2017-10-01'),
 	(9, 1, 8, GETDATE(), '2017-10-01')
 ;
-
-SELECT * FROM Book
-SELECT * FROM Book_Authors
-SELECT * FROM Publisher
-SELECT * FROM Book_Loans
-SELECT * FROM Book_Copies
-SELECT * FROM Borrower
-SELECT * FROM Library_Branch;
